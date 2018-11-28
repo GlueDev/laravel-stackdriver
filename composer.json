@@ -34,18 +34,18 @@
     },
     "autoload": {
         "psr-4": {
-            "GlueDev\\Stackdriver\\": "src/"
+            "GlueDev\\Laravel\\Stackdriver\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "GlueDev\\Stackdriver\\Tests\\": "tests"
+            "GlueDev\\Laravel\\Stackdriver\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "GlueDev\\Stackdriver\\StackdriverServiceProvider"
+                "GlueDev\\Laravel\\Stackdriver\\StackdriverServiceProvider"
             ]
         }
     }
