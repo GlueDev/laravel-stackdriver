@@ -8,6 +8,9 @@
 Enables logging, tracing and error reporting to Google Stackdriver for Laravel.
 Requires PHP >= 7.1
 
+## Screenshots
+<img src="storage/screenshots/screenshot_1.png" alt="Tracing" width="300"/> <img src="storage/screenshots/screenshot_2.png" alt="Error reporting" width="300"/>
+
 ## Installation
 
 Via Composer
@@ -40,8 +43,16 @@ At the time of writing, Google prefers you to authenticate using a service accou
 
 Create a service account with the appropriate roles attached to it and add it to your project. Make sure not to commit this file to git, because of security. You can then specify the path to the service account JSON file in the `keyFilePath` or in the `STACKDRIVER_KEY_FILE_PATH` environment variable.
 
-### Tracing and logging
-Other than changing the values in the config file, tracing and logging needs no additional setup.
+### Tracing
+Tracing requires the Opencensus module to be installed. As we use docker, this is how we install it:
+
+``` Dockerfile
+RUN pecl install opencensus-alpha
+RUN docker-php-ext-enable opencensus
+``` 
+
+### Logging
+Other than changing the values in the config file, logging needs no additional setup.
 
 ### Error reporting
 Error reporting requires you to add the following to the `report` function in your `Exceptions/handler.php` 
@@ -81,6 +92,8 @@ stdout_logfile_maxbytes = 0
 stderr_logfile = /dev/stderr
 stderr_logfile_maxbytes = 0
 ```
+
+You also need to tell Google that the daemon is running. This is done by setting the `IS_BATCH_DAEMON_RUNNING=true`.
 
 And that is it!
 

@@ -48,5 +48,10 @@
                 "GlueDev\\Laravel\\Stackdriver\\StackdriverServiceProvider"
             ]
         }
+    },
+    "archive": {
+        "exclude": [
+            "storage/screenshots"
+        ]
     }
 }
