@@ -9,6 +9,7 @@ use OpenCensus\Trace\Tracer;
 use OpenCensus\Trace\Integrations\Laravel;
 use OpenCensus\Trace\Integrations\Mysql;
 use OpenCensus\Trace\Integrations\PDO;
+use Illuminate\Support\Arr;
 
 class Stackdriver
 {
@@ -74,8 +75,7 @@ class Stackdriver
                 'name' => 'bootstrap',
                 'startTime' => LARAVEL_START,
             ],
-            function () {
-            }
+            function () { }
         );
     }
 
@@ -86,7 +86,7 @@ class Stackdriver
         }
 
         $this->app['log']->listen(function () {
-            $args = array_first(func_get_args());
+            $args = Arr::first(func_get_args());
             $this->app['Stackdriver\Logger']->log(
                 $args->level,
                 $args->message,
