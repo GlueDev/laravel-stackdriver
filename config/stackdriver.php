@@ -88,6 +88,8 @@ return [
                 'workerNum' => 1,
             ],
         ],
+
+        'blacklist' => [],
     ],
 
     'error_reporting' => [
