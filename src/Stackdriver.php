@@ -4,6 +4,7 @@ namespace GlueDev\Laravel\Stackdriver;
 
 use Google\Cloud\Logging\LoggingClient;
 use Google\Cloud\Logging\PsrLogger;
+use Illuminate\Support\Str;
 use OpenCensus\Trace\Exporter\StackdriverExporter;
 use OpenCensus\Trace\Tracer;
 use OpenCensus\Trace\Integrations\Laravel;
@@ -58,6 +59,10 @@ class Stackdriver
 
         // Do not run in CLI mode
         if (php_sapi_name() == 'cli') {
+            return;
+        }
+
+        if (Str::startsWith(request()->getPathInfo(), config('stackdriver.tracing.blacklist'))) {
             return;
         }
 
