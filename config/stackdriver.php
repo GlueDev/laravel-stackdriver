@@ -89,7 +89,7 @@ return [
             ],
         ],
 
-        'blacklist' => [],
+        'ignored_paths' => [],
     ],
 
     'error_reporting' => [
