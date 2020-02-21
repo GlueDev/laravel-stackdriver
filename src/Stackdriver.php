@@ -4,7 +4,6 @@ namespace GlueDev\Laravel\Stackdriver;
 
 use Google\Cloud\Logging\LoggingClient;
 use Google\Cloud\Logging\PsrLogger;
-use Illuminate\Support\Str;
 use OpenCensus\Trace\Exporter\StackdriverExporter;
 use OpenCensus\Trace\Tracer;
 use OpenCensus\Trace\Integrations\Laravel;
@@ -62,7 +61,8 @@ class Stackdriver
             return;
         }
 
-        if (Str::startsWith(request()->getPathInfo(), config('stackdriver.tracing.blacklist'))) {
+        $ignoredPaths = config('stackdriver.tracing.ignored_paths', []);
+        if ($this->app['request']->is($ignoredPaths)) {
             return;
         }
 
