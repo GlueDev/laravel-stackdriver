@@ -88,6 +88,8 @@ return [
                 'workerNum' => 1,
             ],
         ],
+
+        'ignored_paths' => [],
     ],
 
     'error_reporting' => [

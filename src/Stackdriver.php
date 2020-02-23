@@ -61,6 +61,11 @@ class Stackdriver
             return;
         }
 
+        $ignoredPaths = config('stackdriver.tracing.ignored_paths', []);
+        if ($this->app['request']->is($ignoredPaths)) {
+            return;
+        }
+
         // Enable OpenCensus extension integrations
         Laravel::load();
         Mysql::load();
