@@ -89,6 +89,10 @@ return [
             ],
         ],
 
+        /**
+         * List url path patterns for which you want to disable tracing
+         * Useful for keeping third party packages (like Laravel Telescope) from clouding your tracing logs
+         */
         'ignored_paths' => [],
     ],
 
