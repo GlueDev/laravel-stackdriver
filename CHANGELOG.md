@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/GlueDev/laravel-stackdriver/compare/v0.1.2...v0.2.0) (2020-02-23)
+
+
+### Features
+
+* option to ignore tracing for path ([#8](https://github.com/GlueDev/laravel-stackdriver/issues/8)) ([a2b9992](https://github.com/GlueDev/laravel-stackdriver/commit/a2b99929167eb02a6d8bd5d4f0a12c065b7fc416))
+
 ### [0.1.2](https://github.com/GlueDev/laravel-stackdriver/compare/v0.1.1...v0.1.2) (2019-10-30)
 
 
