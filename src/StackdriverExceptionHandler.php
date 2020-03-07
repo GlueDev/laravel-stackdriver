@@ -2,7 +2,6 @@
 
 namespace GlueDev\Laravel\Stackdriver;
 
-use Exception;
 use Google\Cloud\Core\Report\SimpleMetadataProvider;
 use Google\Cloud\ErrorReporting\Bootstrap;
 use Google\Cloud\Logging\LoggingClient;
@@ -10,7 +9,7 @@ use Illuminate\Support\Facades\Cache;
 
 class StackdriverExceptionHandler
 {
-    public static function report(Exception $exception): void
+    public static function report($exception): void
     {
         if (config('stackdriver.enabled') === false || config('stackdriver.error_reporting.enabled') === false) {
             return;
