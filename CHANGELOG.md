@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/GlueDev/laravel-stackdriver/compare/v0.2.0...v0.2.1) (2020-03-07)
+
+
+### Bug Fixes
+
+* drops \Exception type for ExceptionHandler ([#9](https://github.com/GlueDev/laravel-stackdriver/issues/9)) ([7102323](https://github.com/GlueDev/laravel-stackdriver/commit/7102323d54fd9d33f26e87bffd25182400f2bd4f))
+
 ## [0.2.0](https://github.com/GlueDev/laravel-stackdriver/compare/v0.1.2...v0.2.0) (2020-02-23)
 
 
