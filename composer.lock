@@ -5444,5 +5444,5 @@
         "php": ">=7.1"
     },
     "platform-dev": [],
-    "version": "0.2.1"
+    "version": "0.2.2"
 }
