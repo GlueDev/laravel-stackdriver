@@ -1,6 +1,6 @@
 {
     "name": "gluedev/laravel-stackdriver",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "Enables logging, tracing and error reporting to Google Stackdriver for the Laravel framework",
     "license": "MIT",
     "authors": [
@@ -21,7 +21,7 @@
     ],
     "require": {
         "illuminate/support": ">=5.7",
-        "google/cloud-error-reporting": "^0.16.2", 
+        "google/cloud-error-reporting": "^0.16.2",
         "google/cloud-logging": "^1.14",
         "opencensus/opencensus": "^0.5.2",
         "opencensus/opencensus-exporter-stackdriver": "^0.1",
