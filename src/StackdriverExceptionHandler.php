@@ -53,7 +53,7 @@ class StackdriverExceptionHandler
     {
         $message = sprintf('PHP Notice: %s', (string) $exception);
 
-        $psrLogger->error($message, array_merge_recursive([
+        $psrLogger->error($message, array_replace_recursive([
             'context' => [
                 'reportLocation' => [
                     'filePath' => $exception->getFile(),
