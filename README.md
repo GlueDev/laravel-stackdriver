@@ -74,6 +74,21 @@ public function report(Exception $exception)
 }
 ```
 
+You can optionally supply a second argument to `StackdriverExceptionHandler::report` with which you can send additional information to the error reporting.
+The [Google Cloud Error Reporting Reference][link-error-reporting-reference] specifies the correct format.
+
+For example, if you want to add information about the deployed revision in which the error occurred, you may use the following:
+
+```
+StackdriverExceptionHandler::report($exception, [
+    'context' => [
+        'sourceReferences' => [
+            'revisionId' => 'example'
+        ]
+    ]
+]); 
+```
+
 Log in to Google Cloud Console and you should start seeing logs, traces and errors appear.
 
 ### Batch daemon
@@ -117,4 +132,5 @@ Please see the [license file](LICENSE.md) for more information.
 [link-packagist]: https://packagist.org/packages/gluedev/laravel-stackdriver
 [link-downloads]: https://packagist.org/packages/gluedev/laravel-stackdriver
 [link-author]: https://github.com/diederikvandenb
-[link-contributors]: ../../contributors]
+[link-contributors]: ../../contributors
+[link-error-reporting-reference]: https://cloud.google.com/error-reporting/reference/rest/v1beta1/ErrorContext
