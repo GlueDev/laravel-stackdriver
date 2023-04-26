@@ -23,7 +23,7 @@
         "illuminate/support": ">=5.7",
         "google/cloud-error-reporting": "^0.16.2",
         "google/cloud-logging": "^1.14",
-        "opencensus/opencensus": "^0.5.2",
+        "opencensus/opencensus": "^0.7.0",
         "opencensus/opencensus-exporter-stackdriver": "^0.1",
         "php": ">=7.1"
     },
